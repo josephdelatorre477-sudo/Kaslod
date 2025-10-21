@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impact Zone | Action Sports Community</title>
-    <link rel="icon" type="image/png" href="images/shredhub.png">
+    <title>Kaslod Media | Action Sports Community</title>
+    <link rel="icon" type="image/jpeg" href="images/kaslod.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -32,6 +32,115 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+        }
+        
+        /* Enhanced Navbar Styles */
+        .navbar-link {
+            position: relative;
+            padding: 12px 20px;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .navbar-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(239, 68, 68, 0.1));
+            border-radius: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .navbar-link:hover::before {
+            opacity: 1;
+        }
+        
+        .navbar-link:hover {
+            transform: translateY(-2px);
+            color: #f97316;
+        }
+        
+        .navbar-link.active {
+            background: linear-gradient(135deg, #f97316, #ef4444);
+            color: white;
+        }
+        
+        .navbar-link.active::before {
+            opacity: 0;
+        }
+        
+        .navbar-link.active:hover {
+            transform: translateY(-2px);
+        }
+        
+        .admin-btn {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+        }
+        
+        .admin-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #059669, #047857);
+        }
+        
+        .logout-btn {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .logout-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+        }
+        
+        .navbar-logo {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .navbar-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .mobile-menu-btn {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(239, 68, 68, 0.1));
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-radius: 12px;
+            padding: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-btn:hover {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(239, 68, 68, 0.2));
+            border-color: rgba(249, 115, 22, 0.5);
+            transform: scale(1.05);
         }
         /* YouTube Video Modal Styles */
         .video-modal {
@@ -119,24 +228,24 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center space-x-3">
-                    <a href="kaslod.html" class="flex items-center space-x-2">
-                        <img src="images/shredhub.png" alt="Impact Zone Logo" class="h-10 w-auto">
-                        <span class="text-2xl font-bold font-['Bebas+Neue'] tracking-wider gradient-text">IMPACT ZONE</span>
+                    <a href="kaslod.html" class="flex items-center space-x-2 navbar-logo">
+                        <img src="images/kaslod.jpg" alt="Kaslod Media Logo" class="h-10 w-auto rounded-lg">
+                        <span class="text-2xl font-bold font-['Bebas+Neue'] tracking-wider gradient-text">KASLOD MEDIA</span>
                     </a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="kaslod.html" class="text-orange-400 font-semibold hover:text-orange-300 transition">Highlights</a>
-                    <a href="impact_athletes.html" class="text-gray-300 hover:text-orange-400 transition">Athletes</a>
-                    <a href="impact_events.html" class="text-gray-300 hover:text-orange-400 transition">Events</a>
-                    <a href="impact_gear.html" class="text-gray-300 hover:text-orange-400 transition">Gear</a>
-                    <a href="admin_login.html" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md font-medium transition transform hover:scale-105">
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="kaslod.html" class="navbar-link active">Highlights</a>
+                    <a href="impact_athletes.html" class="navbar-link">Athletes</a>
+                    <a href="impact_events.html" class="navbar-link">Events</a>
+                    <a href="impact_gear.html" class="navbar-link">Gear</a>
+                    <a href="admin_login.html" class="admin-btn">
                         Login
                     </a>
-                    <button onclick="openSubmitModal()" class="bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded-md font-medium transition transform hover:scale-105">
+                    <button onclick="openSubmitModal()" class="navbar-link">
                         Submit Clip
                     </button>
                 </div>
-                <button onclick="toggleMobileMenu()" class="md:hidden text-gray-300">
+                <button onclick="toggleMobileMenu()" class="md:hidden text-gray-300 mobile-menu-btn">
                     <i data-feather="menu"></i>
                 </button>
             </div>
@@ -434,8 +543,8 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <img src="images/shredhub.png" alt="Impact Zone Logo" class="h-8 w-auto">
-                        <h3 class="text-2xl font-bold font-['Bebas+Neue'] tracking-wide gradient-text">IMPACT ZONE</h3>
+                        <img src="images/kaslod.jpg" alt="Kaslod Media Logo" class="h-8 w-auto rounded-lg">
+                        <h3 class="text-2xl font-bold font-['Bebas+Neue'] tracking-wide gradient-text">KASLOD MEDIA</h3>
                     </div>
                     <p class="text-gray-400 text-sm">
                         The ultimate action sports community. Celebrating extreme sports, fearless athletes, and insane moments from around the globe.
@@ -486,7 +595,7 @@
             </div>
             <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-500 text-sm">
-                    © 2023 Impact Zone. All rights reserved.
+                    © 2023 Kaslod Media. All rights reserved.
                 </p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
                     <a href="#" class="text-gray-500 hover:text-orange-400 transition text-sm">Privacy Policy</a>
@@ -498,6 +607,40 @@
     </footer>
 
     <script>
+        // ========================================
+        // ADMIN LOGIN SESSION CHECK
+        // ========================================
+        function checkLoginStatus() {
+            const isLoggedIn = localStorage.getItem('impactZoneAdminLoggedIn');
+            if (isLoggedIn === 'true') {
+                // Update navbar to show admin state
+                updateNavbarForAdmin();
+            }
+        }
+
+        function updateNavbarForAdmin() {
+            const loginBtn = document.querySelector('a[href="admin_login.html"]');
+            if (loginBtn) {
+                loginBtn.textContent = 'Admin Dashboard';
+                loginBtn.href = 'admin_dashboard.html';
+                loginBtn.className = 'admin-btn';
+                
+                // Add logout button
+                const logoutBtn = document.createElement('button');
+                logoutBtn.textContent = 'Logout';
+                logoutBtn.className = 'logout-btn';
+                logoutBtn.onclick = logout;
+                
+                loginBtn.parentNode.insertBefore(logoutBtn, loginBtn.nextSibling);
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('impactZoneAdminLoggedIn');
+            localStorage.removeItem('impactZoneAdminUser');
+            window.location.reload();
+        }
+
         // ========================================
         // ACTION SPORTS VIDEOS - MULTI SPORT!
         // ========================================
@@ -775,6 +918,8 @@
         // INITIALIZE EVERYTHING
         // ========================================
         document.addEventListener('DOMContentLoaded', () => {
+            checkLoginStatus();
+            
             // Initialize Vanta.js background
             VANTA.WAVES({
                 el: "#vanta-bg",

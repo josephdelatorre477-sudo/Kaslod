@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impact Zone | Gear</title>
-    <link rel="icon" type="image/png" href="images/shredhub.png">
+    <title>Kaslod Media | Gear</title>
+    <link rel="icon" type="image/jpeg" href="images/kaslod.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
@@ -15,6 +15,114 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+        }
+        
+        /* Enhanced Navbar Styles */
+        .navbar-link {
+            position: relative;
+            padding: 12px 20px;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .navbar-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(239, 68, 68, 0.1));
+            border-radius: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .navbar-link:hover::before {
+            opacity: 1;
+        }
+        
+        .navbar-link:hover {
+            transform: translateY(-2px);
+            color: #f97316;
+        }
+        
+        .navbar-link.active {
+            background: linear-gradient(135deg, #f97316, #ef4444);
+            color: white;
+        }
+        
+        .navbar-link.active::before {
+            opacity: 0;
+        }
+        
+        .navbar-link.active:hover {
+            transform: translateY(-2px);
+        }
+        
+        .admin-btn {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .admin-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #059669, #047857);
+        }
+        
+        .logout-btn {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .logout-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+        }
+        
+        .navbar-logo {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .navbar-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .mobile-menu-btn {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(239, 68, 68, 0.1));
+            border: 2px solid rgba(249, 115, 22, 0.3);
+            border-radius: 12px;
+            padding: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-btn:hover {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(239, 68, 68, 0.2));
+            border-color: rgba(249, 115, 22, 0.5);
+            transform: scale(1.05);
         }
         .gear-card {
             transition: all 0.3s ease;
@@ -83,28 +191,28 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center space-x-3">
-                    <a href="kaslod.html" class="flex items-center space-x-2">
-                        <img src="images/shredhub.png" alt="Impact Zone Logo" class="h-10 w-auto">
-                        <span class="text-2xl font-bold font-['Bebas+Neue'] tracking-wider gradient-text">IMPACT ZONE</span>
+                    <a href="kaslod.html" class="flex items-center space-x-2 navbar-logo">
+                        <img src="images/kaslod.jpg" alt="Kaslod Media Logo" class="h-10 w-auto rounded-lg">
+                        <span class="text-2xl font-bold font-['Bebas+Neue'] tracking-wider gradient-text">KASLOD MEDIA</span>
                     </a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="kaslod.html" class="text-gray-300 hover:text-orange-400 transition">Highlights</a>
-                    <a href="impact_athletes.html" class="text-gray-300 hover:text-orange-400 transition">Athletes</a>
-                    <a href="impact_events.html" class="text-gray-300 hover:text-orange-400 transition">Events</a>
-                    <a href="impact_gear.html" class="text-orange-400 font-semibold hover:text-orange-300 transition">Gear</a>
-                    <button onclick="openCart()" class="relative bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-md font-medium transition">
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="kaslod.html" class="navbar-link">Highlights</a>
+                    <a href="impact_athletes.html" class="navbar-link">Athletes</a>
+                    <a href="impact_events.html" class="navbar-link">Events</a>
+                    <a href="impact_gear.html" class="navbar-link active">Gear</a>
+                    <button onclick="openCart()" class="navbar-link">
                         <i data-feather="shopping-cart" class="w-5 h-5"></i>
                         <span id="cart-count" class="cart-badge hidden">0</span>
                     </button>
-                    <a href="admin_login.html" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md font-medium transition transform hover:scale-105">
+                    <a href="admin_login.html" class="admin-btn">
                         Login
                     </a>
-                    <button onclick="openSubmitModal()" class="bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded-md font-medium transition transform hover:scale-105">
+                    <button onclick="openSubmitModal()" class="navbar-link">
                         Submit Clip
                     </button>
                 </div>
-                <button onclick="toggleMobileMenu()" class="md:hidden text-gray-300">
+                <button onclick="toggleMobileMenu()" class="md:hidden text-gray-300 mobile-menu-btn">
                     <i data-feather="menu"></i>
                 </button>
             </div>
@@ -608,6 +716,40 @@
     </footer>
 
     <script>
+        // ========================================
+        // ADMIN LOGIN SESSION CHECK
+        // ========================================
+        function checkLoginStatus() {
+            const isLoggedIn = localStorage.getItem('impactZoneAdminLoggedIn');
+            if (isLoggedIn === 'true') {
+                // Update navbar to show admin state
+                updateNavbarForAdmin();
+            }
+        }
+
+        function updateNavbarForAdmin() {
+            const loginBtn = document.querySelector('a[href="admin_login.html"]');
+            if (loginBtn) {
+                loginBtn.textContent = 'Admin Dashboard';
+                loginBtn.href = 'admin_dashboard.html';
+                loginBtn.className = 'bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded-md font-medium transition transform hover:scale-105';
+                
+                // Add logout button
+                const logoutBtn = document.createElement('button');
+                logoutBtn.textContent = 'Logout';
+                logoutBtn.className = 'bg-red-500 hover:bg-red-600 px-4 py-2 rounded-md font-medium transition';
+                logoutBtn.onclick = logout;
+                
+                loginBtn.parentNode.insertBefore(logoutBtn, loginBtn.nextSibling);
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('impactZoneAdminLoggedIn');
+            localStorage.removeItem('impactZoneAdminUser');
+            window.location.reload();
+        }
+
         // ========================================
         // COMPREHENSIVE GEAR DATA STRUCTURE
         // ========================================
@@ -1196,8 +1338,104 @@
             }, 3000);
         }
 
+        // ========================================
+        // ADMIN GEAR LOADING
+        // ========================================
+        function loadAdminGear() {
+            const adminGear = JSON.parse(localStorage.getItem('impactZonePublicGear')) || [];
+            
+            if (adminGear.length === 0) {
+                return; // No admin gear to display
+            }
+            
+            // Add admin gear to the gear data
+            adminGear.forEach(item => {
+                gearData[item.name] = {
+                    id: item.id,
+                    category: item.category.toUpperCase(),
+                    categoryColor: getCategoryColor(item.category),
+                    title: item.name,
+                    price: item.price,
+                    rating: item.rating.toString(),
+                    description: item.description,
+                    specifications: [
+                        `Category: ${item.category}`,
+                        `Price: $${item.price}`,
+                        `Rating: ${item.rating}/5`,
+                        `Stock: ${item.stock} units`,
+                        'Admin Added Item'
+                    ],
+                    features: [
+                        'Admin verified quality',
+                        'Professional grade',
+                        'Kaslod Media approved',
+                        'Premium materials'
+                    ],
+                    image: 'http://static.photos/sport/1024x576/23', // Default gear image
+                    stock: item.stock || 10
+                };
+            });
+            
+            // Update the gear grid display
+            updateGearGrid();
+        }
+
+        function getCategoryColor(category) {
+            const colors = {
+                'boards': 'orange',
+                'wheels': 'pink',
+                'safety': 'green',
+                'accessories': 'purple'
+            };
+            return colors[category.toLowerCase()] || 'orange';
+        }
+
+        function updateGearGrid() {
+            const container = document.getElementById('gearGrid');
+            if (!container) return;
+            
+            // Don't clear existing content, just add admin gear to existing default gear
+            // The default gear is already in the HTML, we just need to add admin gear
+            
+            // Add admin gear items to the existing grid
+            const adminGear = JSON.parse(localStorage.getItem('impactZonePublicGear')) || [];
+            
+            adminGear.forEach(item => {
+                const gearCard = document.createElement('div');
+                gearCard.className = `gear-card bg-gray-800 rounded-xl overflow-hidden`; 
+                gearCard.setAttribute('data-category', item.category.toLowerCase());
+                
+                gearCard.innerHTML = `
+                    <div class="relative h-64 bg-gray-700 flex items-center justify-center">
+                        <i data-feather="box" class="w-20 h-20 text-orange-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-orange-400 font-semibold">${item.category.toUpperCase()}</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">${item.name}</h3>
+                        <p class="text-gray-400 text-sm mb-4">${item.description}</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-orange-400">$${item.price}</span>
+                            <div class="flex items-center">
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 text-sm">${item.rating}</span>
+                            </div>
+                        </div>
+                        <button onclick="viewGearDetails('${item.name}')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                            View Details
+                        </button>
+                    </div>
+                `;
+                
+                container.appendChild(gearCard);
+            });
+            
+            feather.replace();
+        }
+
         // Initialize everything on page load
         document.addEventListener('DOMContentLoaded', () => {
+            checkLoginStatus();
+            loadAdminGear(); // Load admin gear first
             initVantaBackground();
             feather.replace();
             updateCartCount();
