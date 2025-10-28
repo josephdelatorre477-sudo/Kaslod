@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaslod Media | Admin Login</title>
     <link rel="icon" type="image/jpeg" href="images/kaslod.jpg">
+    <link rel="stylesheet" href="styles/theme.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap');
         .gradient-text {
-            background: linear-gradient(45deg, #f97316, #ef4444, #ec4899);
+            background: linear-gradient(135deg, var(--ig-1), var(--ig-2), var(--ig-3), var(--ig-4));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -112,13 +113,14 @@
             }
         }
         .form-input {
-            background: #374151;
-            border: 1px solid #4b5563;
+            background: #FFFFFF;
+            color: #262626;
+            border: 1px solid #DBDBDB;
             transition: all 0.3s ease;
         }
         .form-input:focus {
-            border-color: #f97316;
-            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+            border-color: #6572e0;
+            box-shadow: 0 0 0 3px rgba(101, 114, 224, 0.12);
         }
         .error-message {
             background: linear-gradient(135deg, #ef4444, #dc2626);
@@ -136,11 +138,11 @@
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white font-['Montserrat'] overflow-x-hidden">
+<body class="bg-[#FAFAFA] text-[#262626] font-['Montserrat'] overflow-x-hidden">
     <div id="vanta-bg" class="fixed inset-0 -z-10 opacity-20"></div>
     
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center space-x-3">
@@ -151,7 +153,7 @@
                 </div>
                 <div class="hidden md:flex items-center space-x-4">
                     <a href="kaslod.html" class="navbar-link">Highlights</a>
-                    <a href="impact_athletes.html" class="navbar-link">Athletes</a>
+                    
                     <a href="impact_events.html" class="navbar-link">Events</a>
                     <a href="impact_gear.html" class="navbar-link">Gear</a>
                     <span class="admin-btn active">Admin Login</span>
@@ -175,13 +177,13 @@
 
             <!-- Login Form -->
             <div class="max-w-md mx-auto">
-                <div class="login-modal-content bg-gray-800 rounded-xl p-8 shadow-2xl border border-gray-700">
+                <div class="login-modal-content bg-white rounded-xl p-8 shadow-2xl border border-gray-200">
                     <div class="text-center mb-8">
-                        <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[var(--ig-1)] to-[var(--ig-2)] rounded-full flex items-center justify-center mx-auto mb-4">
                             <i data-feather="shield" class="w-8 h-8 text-white"></i>
                         </div>
                         <h2 class="text-2xl font-bold font-['Bebas+Neue'] gradient-text mb-2">ADMIN LOGIN</h2>
-                        <p class="text-gray-400">Enter your credentials to access the admin dashboard</p>
+                        <p class="text-gray-600">Enter your credentials to access the admin dashboard</p>
                     </div>
 
                     <form id="login-form" onsubmit="handleLogin(event)" class="space-y-6">
@@ -198,17 +200,17 @@
                                 <input type="checkbox" class="rounded border-gray-600 bg-gray-700 text-orange-500 focus:ring-orange-500">
                                 <span class="ml-2 text-sm text-gray-300">Remember me</span>
                             </label>
-                            <a href="#" class="text-sm text-orange-400 hover:text-orange-300">Forgot password?</a>
+                            <a href="#" class="text-sm text-[var(--accent-orange)] hover:opacity-80">Forgot password?</a>
                         </div>
-                        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 py-3 rounded-md font-medium transition transform hover:scale-105">
+                        <button type="submit" class="w-full ig-btn py-3 rounded-md font-medium transition transform hover:scale-105">
                             <i data-feather="log-in" class="w-5 h-5 inline mr-2"></i>
                             Login to Dashboard
                         </button>
                     </form>
 
                     <div class="mt-6 text-center">
-                        <p class="text-sm text-gray-400">
-                            Default credentials: <span class="text-orange-400">admin</span> / <span class="text-orange-400">admin123</span>
+                        <p class="text-sm text-gray-600">
+                            Default credentials: <span class="text-[var(--accent-orange)]">admin</span> / <span class="text-[var(--accent-orange)]">admin123</span>
                         </p>
                     </div>
                 </div>

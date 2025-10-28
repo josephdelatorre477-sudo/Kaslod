@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaslod Media | Athletes</title>
     <link rel="icon" type="image/jpeg" href="images/kaslod.jpg">
+    <link rel="stylesheet" href="styles/theme.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
@@ -25,7 +26,7 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
         .gradient-text {
-            background: linear-gradient(45deg, #f97316, #ef4444, #ec4899);
+            background: linear-gradient(135deg, var(--ig-1), var(--ig-2), var(--ig-3), var(--ig-4));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -82,13 +83,14 @@
         .admin-btn {
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
-            padding: 12px 24px;
+            padding: 12px 20px;
             border-radius: 12px;
             font-weight: 600;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             font-size: 14px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
         }
         
         .admin-btn:hover {
@@ -217,11 +219,11 @@
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white font-['Montserrat'] overflow-x-hidden">
+<body class="bg-[#FAFAFA] text-[#262626] font-['Montserrat'] overflow-x-hidden">
     <div id="vanta-bg" class="fixed inset-0 -z-10 opacity-20"></div>
     
     <!-- Bagong Navigation -->
-    <nav class="fixed w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center space-x-3">
@@ -232,10 +234,10 @@
                 </div>
                 <div class="hidden md:flex items-center space-x-4">
                     <a href="kaslod.html" class="navbar-link">Highlights</a>
-                    <a href="impact_athletes.html" class="navbar-link active">Athletes</a>
+                    
                     <a href="impact_events.html" class="navbar-link">Events</a>
                     <a href="impact_gear.html" class="navbar-link">Gear</a>
-                    <a href="admin_login.html" class="admin-btn">
+                    <a href="admin_login.html" class="ig-btn">
                         Login
                     </a>
                     <button onclick="openSubmitModal()" class="navbar-link">
@@ -255,28 +257,28 @@
             <div class="text-center mb-16">
                 <h1 class="text-5xl md:text-7xl font-bold font-['Bebas+Neue'] tracking-wide mb-6">
                     <span class="gradient-text">MEET THE</span><br>
-                    <span class="text-white">ATHLETES</span>
+                    <span class="text-[#262626]">ATHLETES</span>
                 </h1>
-                <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                     Discover the world's most talented action sports athletes across skateboarding, BMX, parkour, and motocross.
                 </p>
             </div>
 
             <!-- Category Navigation -->
             <div class="flex justify-center space-x-4 mb-12 flex-wrap gap-2">
-                <button onclick="showAthletesByCategory('skateboarding')" class="category-btn active px-6 py-2 rounded-md bg-orange-500 text-white font-medium transition flex items-center">
+                <button onclick="showAthletesByCategory('skateboarding')" class="category-btn active px-6 py-2 rounded-md ig-btn text-white font-medium transition flex items-center">
                     <i data-feather="box" class="w-4 h-4 mr-2"></i>
                     Skateboarding
                 </button>
-                <button onclick="showAthletesByCategory('bmx')" class="category-btn px-6 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium transition flex items-center">
+                <button onclick="showAthletesByCategory('bmx')" class="category-btn px-6 py-2 rounded-md bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium transition flex items-center">
                     <i data-feather="disc" class="w-4 h-4 mr-2"></i>
                     BMX
                 </button>
-                <button onclick="showAthletesByCategory('parkour')" class="category-btn px-6 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium transition flex items-center">
+                <button onclick="showAthletesByCategory('parkour')" class="category-btn px-6 py-2 rounded-md bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium transition flex items-center">
                     <i data-feather="user" class="w-4 h-4 mr-2"></i>
                     Parkour
                 </button>
-                <button onclick="showAthletesByCategory('motocross')" class="category-btn px-6 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium transition flex items-center">
+                <button onclick="showAthletesByCategory('motocross')" class="category-btn px-6 py-2 rounded-md bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium transition flex items-center">
                     <i data-feather="zap" class="w-4 h-4 mr-2"></i>
                     Motocross
                 </button>
@@ -391,7 +393,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+    <footer class="bg-white border-t border-gray-200 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <div class="flex items-center justify-center space-x-2 mb-4">
@@ -420,12 +422,12 @@
             if (loginBtn) {
                 loginBtn.textContent = 'Admin Dashboard';
                 loginBtn.href = 'admin_dashboard.html';
-                loginBtn.className = 'bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded-md font-medium transition transform hover:scale-105';
+                loginBtn.className = 'admin-btn';
                 
                 // Add logout button
                 const logoutBtn = document.createElement('button');
                 logoutBtn.textContent = 'Logout';
-                logoutBtn.className = 'bg-red-500 hover:bg-red-600 px-4 py-2 rounded-md font-medium transition';
+                logoutBtn.className = 'logout-btn';
                 logoutBtn.onclick = logout;
                 
                 loginBtn.parentNode.insertBefore(logoutBtn, loginBtn.nextSibling);

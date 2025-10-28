@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaslod Media | Action Sports Community</title>
     <link rel="icon" type="image/jpeg" href="images/kaslod.jpg">
+    <link rel="stylesheet" href="styles/theme.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -28,7 +29,7 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
         .gradient-text {
-            background: linear-gradient(45deg, #f97316, #ef4444, #ec4899);
+            background: linear-gradient(135deg, var(--ig-1), var(--ig-2), var(--ig-3), var(--ig-4));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -218,13 +219,103 @@
             align-items: center;
             gap: 4px;
         }
+        
+        .video-thumbnail {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .video-thumbnail img {
+            transition: all 0.5s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-card:hover .video-thumbnail img {
+            transform: scale(1.1);
+        }
+        
+        .video-card {
+            transition: all 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .play-button-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 64px;
+            height: 64px;
+            background: rgba(249, 115, 22, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            z-index: 10;
+        }
+        
+        .video-card:hover .play-button-overlay {
+            opacity: 1;
+        }
+        
+        .play-button-overlay::before {
+            content: '▶';
+            color: white;
+            font-size: 24px;
+            margin-left: 4px;
+        }
+        
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 5;
+        }
+        
+        .video-card:hover .gradient-overlay {
+            opacity: 1;
+        }
+        
+        .thumbnail-loading {
+            background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
-<body class="bg-gray-900 text-white font-['Montserrat'] overflow-x-hidden">
+<body class="bg-[#FAFAFA] text-[#262626] font-['Montserrat'] overflow-x-hidden">
     <div id="vanta-bg" class="fixed inset-0 -z-10 opacity-20"></div>
     
     <!-- Bagong Navigation -->
-    <nav class="fixed w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center space-x-3">
@@ -235,10 +326,10 @@
                 </div>
                 <div class="hidden md:flex items-center space-x-4">
                     <a href="kaslod.html" class="navbar-link active">Highlights</a>
-                    <a href="impact_athletes.html" class="navbar-link">Athletes</a>
+                    
                     <a href="impact_events.html" class="navbar-link">Events</a>
                     <a href="impact_gear.html" class="navbar-link">Gear</a>
-                    <a href="admin_login.html" class="admin-btn">
+                    <a href="admin_login.html" class="ig-btn">
                         Login
                     </a>
                     <button onclick="openSubmitModal()" class="navbar-link">
@@ -253,52 +344,56 @@
     </nav>
 
     <!-- Bagong Hero Section -->
-    <section class="min-h-screen flex items-center pt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section class="min-h-screen flex items-center pt-16 relative">
+        <div class="absolute inset-0 bg-cover bg-center opacity-30 blur-sm" style="background-image: url('images/display.jpg');"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-800/50 to-gray-900"></div>
+        <div class="relative z-10 w-full">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h1 class="text-5xl md:text-7xl font-bold font-['Bebas+Neue'] tracking-wide mb-6">
                         <span class="gradient-text">EXTREME</span><br>
                         <span class="text-white">ACTION</span>
                     </h1>
-                    <p class="text-lg text-gray-300 mb-8 max-w-lg">
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
                         Experience the world's most insane action sports moments. From skateboarding and BMX to parkour and motocross - all in one adrenaline-fueled community.
                     </p>
                     <div class="flex space-x-4">
-                        <button onclick="watchReel()" class="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-md font-medium transition transform hover:scale-105 flex items-center">
+                        <button onclick="watchReel()" class="ig-btn px-6 py-3 rounded-md font-medium transition transform hover:scale-105 flex items-center">
                             <i data-feather="play" class="mr-2"></i> Watch Reel
                         </button>
-                        <button onclick="viewTopClips()" class="border border-orange-500 text-orange-400 hover:bg-orange-500/10 px-6 py-3 rounded-md font-medium transition transform hover:scale-105 flex items-center">
+                        <button onclick="viewTopClips()" class="border border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-md font-medium transition transform hover:scale-105 flex items-center">
                             <i data-feather="award" class="mr-2"></i> Top Clips
                         </button>
                     </div>
                 </div>
-                <div class="relative">
+                <a class="relative block" href="https://seismicskate.com/adrien-paynel/" target="_blank" rel="noopener noreferrer">
                     <div class="absolute -inset-4 bg-gradient-to-r from-orange-500 to-pink-500 rounded-xl blur opacity-75"></div>
                     <div class="relative bg-gray-800 rounded-xl overflow-hidden h-96">
-                        <img src="http://static.photos/sport/1024x576/7" alt="Action Sports Athlete" class="w-full h-full object-cover">
+                        <img src="images/paynel.jpg" alt="Kaslod Media" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-6">
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
                             <div class="flex items-center mb-2">
                                 <div class="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center mr-2">
                                     <i data-feather="user" class="w-4 h-4"></i>
                                 </div>
-                                <span class="font-medium">Alex "Hawk" Johnson</span>
+                                <span class="font-medium text-white">Adrien "Frenchy" Paynel</span>
                             </div>
-                            <h3 class="text-xl font-bold">Skateboarding - 72mph</h3>
+                            <h3 class="text-xl font-bold text-white">Downhill Skateboarding - 110mph</h3>
                             <div class="flex items-center mt-2">
                                 <div class="flex items-center mr-4">
                                     <i data-feather="eye" class="w-4 h-4 mr-1"></i>
-                                    <span>24.5K</span>
+                                    <span class="text-white">24.5K</span>
                                 </div>
                                 <div class="flex items-center">
                                     <i data-feather="heart" class="w-4 h-4 mr-1 text-pink-500"></i>
-                                    <span>1.2K</span>
+                                    <span class="text-white">1.2K</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
+            </div>
             </div>
         </div>
     </section>
@@ -308,9 +403,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center mb-12">
                 <h2 class="text-3xl font-bold font-['Bebas+Neue'] tracking-wide">
-                    <span class="gradient-text">FEATURED</span> <span class="text-white">HIGHLIGHTS</span>
+                    <span class="gradient-text">FEATURED</span> <span class="text-[#262626]">HIGHLIGHTS</span>
                 </h2>
                 <div class="flex space-x-2">
+                    <button onclick="refreshThumbnails()" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition" title="Refresh Thumbnails">
+                        <i data-feather="refresh-cw"></i>
+                    </button>
                     <button onclick="navigateCarousel('left')" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition">
                         <i data-feather="chevron-left"></i>
                     </button>
@@ -327,14 +425,14 @@
     </section>
 
     <!-- Bagong Athletes Leaderboard -->
-    <section class="py-20 bg-gradient-to-b from-gray-900 to-gray-900/50">
+    <section class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold font-['Bebas+Neue'] tracking-wide mb-12 text-center">
-                <span class="gradient-text">TOP</span> <span class="text-white">ATHLETES</span>
+                <span class="gradient-text">TOP</span> <span class="text-[#262626]">ATHLETES</span>
             </h2>
 
-            <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700">
-                <div class="grid grid-cols-12 bg-gray-700/50 p-4 font-medium text-gray-300 uppercase text-xs tracking-wider">
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+                <div class="grid grid-cols-12 bg-gray-100 p-4 font-medium text-gray-600 uppercase text-xs tracking-wider">
                     <div class="col-span-1">#</div>
                     <div class="col-span-4">Athlete</div>
                     <div class="col-span-2 text-center">Sport</div>
@@ -429,7 +527,7 @@
             </div>
 
             <div class="mt-8 flex justify-center">
-                <button onclick="viewFullLeaderboard()" class="border border-orange-500 text-orange-400 hover:bg-orange-500/10 px-6 py-3 rounded-md font-medium transition transform hover:scale-105 flex items-center">
+                <button onclick="viewFullLeaderboard()" class="border border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-md font-medium transition transform hover:scale-105 flex items-center">
                     View Full Leaderboard
                 </button>
             </div>
@@ -440,12 +538,12 @@
     <section class="py-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-4xl font-bold font-['Bebas+Neue'] tracking-wide mb-6">
-                <span class="gradient-text">SHARE</span> <span class="text-white">YOUR ACTION</span>
+                <span class="gradient-text">SHARE</span> <span class="text-[#262626]">YOUR ACTION</span>
             </h2>
             <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                 Got insane action sports footage? Submit your best clips and get featured in our global community!
             </p>
-            <button onclick="uploadClip()" class="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-md font-medium transition transform hover:scale-105 flex items-center mx-auto">
+            <button onclick="uploadClip()" class="ig-btn px-8 py-4 rounded-md font-medium transition transform hover:scale-105 flex items-center mx-auto">
                 <i data-feather="upload" class="mr-2"></i> Upload Your Clip
             </button>
         </div>
@@ -537,8 +635,13 @@
         </div>
     </div>
 
+    <!-- Debug Button (Hidden) -->
+    <button onclick="debugThumbnails()" class="fixed bottom-4 right-4 bg-gray-800 hover:bg-gray-700 text-white p-2 rounded-full opacity-50 hover:opacity-100 transition-opacity z-50" title="Debug Thumbnails">
+        <i data-feather="bug" class="w-4 h-4"></i>
+    </button>
+
     <!-- Footer - REBRANDED -->
-    <footer class="bg-gray-800/50 border-t border-gray-700 py-12">
+    <footer class="bg-white border-t border-gray-200 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
@@ -546,34 +649,34 @@
                         <img src="images/kaslod.jpg" alt="Kaslod Media Logo" class="h-8 w-auto rounded-lg">
                         <h3 class="text-2xl font-bold font-['Bebas+Neue'] tracking-wide gradient-text">KASLOD MEDIA</h3>
                     </div>
-                    <p class="text-gray-400 text-sm">
+                    <p class="text-gray-600 text-sm">
                         The ultimate action sports community. Celebrating extreme sports, fearless athletes, and insane moments from around the globe.
                     </p>
                     <div class="flex space-x-4 mt-6">
-                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+                        <a href="#" class="text-gray-600 hover:text-[var(--accent-orange)] transition">
                             <i data-feather="instagram"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+                        <a href="#" class="text-gray-600 hover:text-[var(--accent-orange)] transition">
                             <i data-feather="youtube"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-orange-400 transition">
+                        <a href="#" class="text-gray-600 hover:text-[var(--accent-orange)] transition">
                             <i data-feather="twitter"></i>
                         </a>
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Explore</h4>
+                    <h4 class="text-lg font-bold mb-4 text-[#262626]">Explore</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Highlights</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-[var(--accent-orange)] transition">Highlights</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Top Clips</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Athletes</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Events</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Sports</h4>
+                    <h4 class="text-lg font-bold mb-4 text-[#262626]">Sports</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Skateboarding</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-[var(--accent-orange)] transition">Skateboarding</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">BMX</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Parkour</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Motocross</a></li>
@@ -581,26 +684,26 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Stay Updated</h4>
-                    <p class="text-gray-400 text-sm mb-4">
+                    <h4 class="text-lg font-bold mb-4 text-[#262626]">Stay Updated</h4>
+                        <p class="text-gray-600 text-sm mb-4">
                         Subscribe to get the latest action sports content straight to your inbox.
                     </p>
                     <form onsubmit="subscribeNewsletter(event)" class="flex">
-                        <input type="email" placeholder="Your email" required class="bg-gray-700 text-white px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-orange-500 w-full">
-                        <button type="submit" class="bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded-r-md transition">
+                        <input type="email" placeholder="Your email" required class="bg-white text-[#262626] border border-gray-300 px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-[var(--accent-blue)] w-full">
+                        <button type="submit" class="ig-btn px-4 py-2 rounded-r-md transition">
                             <i data-feather="send"></i>
                         </button>
                     </form>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-500 text-sm">
                     © 2023 Kaslod Media. All rights reserved.
                 </p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-500 hover:text-orange-400 transition text-sm">Privacy Policy</a>
-                    <a href="#" class="text-gray-500 hover:text-orange-400 transition text-sm">Terms of Service</a>
-                    <a href="#" class="text-gray-500 hover:text-orange-400 transition text-sm">Contact</a>
+                    <a href="#" class="text-gray-600 hover:text-[var(--accent-orange)] transition text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-600 hover:text-[var(--accent-orange)] transition text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-600 hover:text-[var(--accent-orange)] transition text-sm">Contact</a>
                 </div>
             </div>
         </div>
@@ -644,55 +747,127 @@
         // ========================================
         // ACTION SPORTS VIDEOS - MULTI SPORT!
         // ========================================
-        const featuredVideos = [
-            // Skateboarding
+        let featuredVideos = [
+            // Skateboarding Videos
             {
-                videoId: 'AkyempRzRL8',
+                videoId: 'dQw4w9WgxcQ',
                 title: 'Epic Downhill Run',
                 athlete: 'Alex "Hawk" Johnson',
                 sport: 'Skateboarding',
                 location: 'Swiss Alps',
-                badge: { text: 'TRENDING', color: 'orange' }
+                badge: { text: 'TRENDING', color: 'orange' },
+                views: '2.4M',
+                likes: '156K',
+                uploadDate: '2024-01-15'
             },
-            // BMX
             {
-                videoId: 'dQw4w9WgxcQ',
+                videoId: '9bZkp7q19f0',
+                title: 'Skateboarding Best Tricks 2024',
+                athlete: 'Tony Hawk',
+                sport: 'Skateboarding',
+                location: 'California',
+                badge: { text: 'LEGEND', color: 'orange' },
+                views: '5.8M',
+                likes: '342K',
+                uploadDate: '2024-02-03'
+            },
+            {
+                videoId: '70ovFxDe9i8',
+                title: 'Street Skateboarding Compilation',
+                athlete: 'Nyjah Huston',
+                sport: 'Skateboarding',
+                location: 'Los Angeles',
+                badge: { text: 'PRO', color: 'orange' },
+                views: '1.2M',
+                likes: '89K',
+                uploadDate: '2024-01-28'
+            },
+            // BMX Videos
+            {
+                videoId: '1k7jG3j3tlM',
                 title: 'BMX Backflip Compilation',
                 athlete: 'Marcus Chen',
                 sport: 'BMX',
                 location: 'California',
                 badge: { text: 'POPULAR', color: 'pink' }
             },
-            // Parkour
             {
-                videoId: '9bZkp7q19f0',
+                videoId: '3JNWCr5gCSo',
+                title: 'BMX Freestyle Highlights',
+                athlete: 'Ryan Nyquist',
+                sport: 'BMX',
+                location: 'X Games',
+                badge: { text: 'INSANE', color: 'pink' }
+            },
+            {
+                videoId: 'AkyempRzRL8',
+                title: 'BMX Street Tricks',
+                athlete: 'Chad Kerley',
+                sport: 'BMX',
+                location: 'New York',
+                badge: { text: 'STREET', color: 'pink' }
+            },
+            // Parkour Videos
+            {
+                videoId: 'jNQXAC9IVRw',
                 title: 'Urban Parkour Flow',
                 athlete: 'Jamie Rivers',
                 sport: 'Parkour',
                 location: 'Barcelona',
                 badge: { text: 'NEW', color: 'purple' }
             },
-            // Motocross
             {
-                videoId: '70ovFxDe9i8',
-                title: 'Dirt Bike Freestyle',
+                videoId: 'M7lc1UVf-VE',
+                title: 'Parkour Stunts Compilation',
+                athlete: 'Jesse La Flair',
+                sport: 'Parkour',
+                location: 'Paris',
+                badge: { text: 'FLOW', color: 'purple' }
+            },
+            {
+                videoId: 'dQw4w9WgxcQ',
+                title: 'Extreme Parkour Moves',
+                athlete: 'Dom Tomasso',
+                sport: 'Parkour',
+                location: 'London',
+                badge: { text: 'EXTREME', color: 'purple' }
+            },
+            // Motocross Videos
+            {
+                videoId: '9bZkp7q19f0',
+                title: 'Motocross Freestyle Jumps',
                 athlete: 'Tyler Morgan',
                 sport: 'Motocross',
                 location: 'Utah Desert',
                 badge: { text: 'EXTREME', color: 'red' }
             },
-            // Surfing
+            {
+                videoId: '70ovFxDe9i8',
+                title: 'Motocross Best Tricks',
+                athlete: 'Travis Pastrana',
+                sport: 'Motocross',
+                location: 'Nitro Circus',
+                badge: { text: 'LEGEND', color: 'red' }
+            },
             {
                 videoId: '1k7jG3j3tlM',
+                title: 'Dirt Bike Freestyle',
+                athlete: 'Ethan Morgan',
+                sport: 'Motocross',
+                location: 'Arizona',
+                badge: { text: 'AIR', color: 'red' }
+            },
+            // Additional Sports
+            {
+                videoId: '3JNWCr5gCSo',
                 title: 'Big Wave Surfing',
                 athlete: 'Kai Nakamura',
                 sport: 'Surfing',
                 location: 'Hawaii',
                 badge: { text: 'EPIC', color: 'blue' }
             },
-            // Snowboarding
             {
-                videoId: '3JNWCr5gCSo',
+                videoId: 'AkyempRzRL8',
                 title: 'Backcountry Snowboarding',
                 athlete: 'Sarah Lindstrom',
                 sport: 'Snowboarding',
@@ -782,9 +957,136 @@
         }
 
         // ========================================
-        // GENERATE VIDEO CARDS
+        // LOAD VIDEOS FROM ADMIN DASHBOARD
+        // ========================================
+        function loadVideosFromAdmin() {
+            const savedVideos = localStorage.getItem('kaslodVideos');
+            if (savedVideos) {
+                featuredVideos = JSON.parse(savedVideos);
+            }
+        }
+
+        // ========================================
+        // IMAGE PRELOADING SYSTEM
+        // ========================================
+        function preloadVideoThumbnails(videos) {
+            const preloadPromises = videos.map(video => {
+                return new Promise((resolve) => {
+                    const primaryUrl = `https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`;
+                    const fallbackUrl = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
+                    
+                    const img = new Image();
+                    img.onload = () => resolve({ video, url: primaryUrl, success: true });
+                    img.onerror = () => {
+                        const fallbackImg = new Image();
+                        fallbackImg.onload = () => resolve({ video, url: fallbackUrl, success: true });
+                        fallbackImg.onerror = () => resolve({ video, url: fallbackUrl, success: false });
+                        fallbackImg.src = fallbackUrl;
+                    };
+                    img.src = primaryUrl;
+                });
+            });
+            
+            return Promise.all(preloadPromises);
+        }
+
+        // ========================================
+        // ENHANCED VIDEO CARD GENERATION
         // ========================================
         function generateVideoCards() {
+            const container = document.getElementById('featured-highlights-container');
+            if (!container) return;
+
+            // Show loading state
+            container.innerHTML = `
+                <div class="col-span-full flex justify-center items-center py-20">
+                    <div class="text-center">
+                        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500 mb-4"></div>
+                        <p class="text-gray-400">Loading video thumbnails...</p>
+                    </div>
+                </div>
+            `;
+
+            // Preload thumbnails and generate cards
+            preloadVideoThumbnails(featuredVideos).then(results => {
+                container.innerHTML = results.map(({ video, url, success }) => {
+                    const badgeColors = {
+                        orange: 'bg-orange-500',
+                        pink: 'bg-pink-500',
+                        purple: 'bg-purple-500',
+                        blue: 'bg-blue-500',
+                        green: 'bg-green-500',
+                        red: 'bg-red-500',
+                        cyan: 'bg-cyan-500'
+                    };
+                    
+                    const badgeClass = badgeColors[video.badge.color] || 'bg-orange-500';
+                    const thumbnailUrl = success ? url : `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
+
+                    return `
+                        <div class="video-card group relative bg-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition duration-300 cursor-pointer" onclick="playVideo('${video.videoId}')">
+                            <div class="video-thumbnail relative h-64">
+                                <img src="${thumbnailUrl}" 
+                                     alt="${video.title}" 
+                                     class="w-full h-full object-cover fade-in"
+                                     loading="lazy">
+                                <div class="gradient-overlay"></div>
+                                <div class="play-button-overlay"></div>
+                                <div class="youtube-badge">
+                                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg>
+                                    ${video.badge.text}
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 line-clamp-2">${video.title}</h3>
+                                <div class="flex items-center justify-between text-sm text-gray-400 mb-4">
+                                    <div class="flex items-center">
+                                        <i data-feather="user" class="w-4 h-4 mr-2"></i>
+                                        <span class="truncate">${video.athlete}</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                                        <span class="truncate">${video.location}</span>
+                                    </div>
+                                </div>
+                                ${video.views ? `
+                                    <div class="flex items-center text-sm text-gray-400 mb-4">
+                                        <i data-feather="eye" class="w-4 h-4 mr-2"></i>
+                                        <span>${video.views} views</span>
+                                        ${video.likes ? `
+                                            <i data-feather="heart" class="w-4 h-4 mr-1 ml-4 text-pink-500"></i>
+                                            <span>${video.likes}</span>
+                                        ` : ''}
+                                    </div>
+                                ` : ''}
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs px-3 py-1 rounded-full ${badgeClass} text-white font-bold">${video.sport}</span>
+                                    <div class="flex items-center text-gray-400">
+                                        <i data-feather="play" class="w-4 h-4 mr-1"></i>
+                                        <span>Watch</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                // Replace feather icons after cards are generated
+                feather.replace();
+                
+                // Log thumbnail loading results for debugging
+                console.log('Thumbnail loading results:', results);
+            }).catch(error => {
+                console.error('Error preloading thumbnails:', error);
+                // Fallback to basic generation if preloading fails
+                generateBasicVideoCards();
+            });
+        }
+
+        // Fallback function for basic video card generation
+        function generateBasicVideoCards() {
             const container = document.getElementById('featured-highlights-container');
             if (!container) return;
 
@@ -801,15 +1103,17 @@
                 
                 const badgeClass = badgeColors[video.badge.color] || 'bg-orange-500';
                 const thumbnailUrl = `https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`;
-                const fallbackUrl = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
 
                 return `
-                    <div class="group relative bg-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition duration-300 skew-card cursor-pointer" onclick="playVideo('${video.videoId}')">
-                        <div class="aspect-w-16 aspect-h-9 video-thumbnail relative h-64">
+                    <div class="video-card group relative bg-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition duration-300 cursor-pointer" onclick="playVideo('${video.videoId}')">
+                        <div class="video-thumbnail relative h-64">
                             <img src="${thumbnailUrl}" 
-                                 onerror="this.src='${fallbackUrl}'" 
                                  alt="${video.title}" 
-                                 class="w-full h-full object-cover">
+                                 class="w-full h-full object-cover"
+                                 loading="lazy"
+                                 onerror="this.src='https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg'">
+                            <div class="gradient-overlay"></div>
+                            <div class="play-button-overlay"></div>
                             <div class="youtube-badge">
                                 <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -840,6 +1144,8 @@
                     </div>
                 `;
             }).join('');
+            
+            feather.replace();
         }
 
         // ========================================
@@ -858,14 +1164,50 @@
         }
 
         // ========================================
+        // DEBUG AND TESTING FUNCTIONS
+        // ========================================
+        function debugThumbnails() {
+            console.log('=== THUMBNAIL DEBUG REPORT ===');
+            console.log('Total videos:', featuredVideos.length);
+            
+            featuredVideos.forEach((video, index) => {
+                const primaryUrl = `https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`;
+                const fallbackUrl = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
+                
+                console.log(`\nVideo ${index + 1}: ${video.title}`);
+                console.log(`Video ID: ${video.videoId}`);
+                console.log(`Primary URL: ${primaryUrl}`);
+                console.log(`Fallback URL: ${fallbackUrl}`);
+                
+                // Test primary URL
+                const img = new Image();
+                img.onload = () => console.log(`✅ Primary thumbnail loaded successfully`);
+                img.onerror = () => {
+                    console.log(`❌ Primary thumbnail failed, testing fallback...`);
+                    const fallbackImg = new Image();
+                    fallbackImg.onload = () => console.log(`✅ Fallback thumbnail loaded successfully`);
+                    fallbackImg.onerror = () => console.log(`❌ Both thumbnails failed to load`);
+                    fallbackImg.src = fallbackUrl;
+                };
+                img.src = primaryUrl;
+            });
+        }
+
+        function refreshThumbnails() {
+            console.log('Refreshing thumbnails...');
+            generateVideoCards();
+        }
+
+        // ========================================
         // UTILITY FUNCTIONS
         // ========================================
+
         function watchReel() {
-            alert('Playing action sports reel...\n(Feature coming soon!)');
+            window.open('https://www.instagram.com/p/DQNg74ngaI4/', '_blank');
         }
 
         function viewTopClips() {
-            alert('Loading top clips...\n(Feature coming soon!)');
+            window.open('https://www.youtube.com/watch?v=sAjiu2ePF1E', '_blank');
         }
 
         function viewFullLeaderboard() {
@@ -919,6 +1261,9 @@
         // ========================================
         document.addEventListener('DOMContentLoaded', () => {
             checkLoginStatus();
+            
+            // Load videos from admin dashboard
+            loadVideosFromAdmin();
             
             // Initialize Vanta.js background
             VANTA.WAVES({

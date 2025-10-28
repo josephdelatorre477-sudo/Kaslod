@@ -1,0 +1,247 @@
+/* Instagram-Inspired Natural Theme - Eye-Friendly Colors */
+
+:root {
+    /* Instagram gradient colors (softened/muted versions) */
+    --ig-1: #f7a45f;
+    --ig-2: #e25595;
+    --ig-3: #8b66c2;
+    --ig-4: #6572e0;
+    
+    /* Base colors - Instagram-inspired light theme */
+    --bg: #FAFAFA;
+    --surface: #FFFFFF;
+    --surface-hover: #F5F5F5;
+    --text: #000000;
+    --text-muted: #666666;
+    --text-light: #333333;
+    --border: #DBDBDB;
+    --border-light: #EFEFEF;
+    
+    /* Accent colors */
+    --accent-orange: #F58529;
+    --accent-pink: #DD2A7B;
+    --accent-purple: #8134AF;
+    --accent-blue: #515BD4;
+    
+    /* Success, Warning, Error */
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Instagram Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, var(--ig-1), var(--ig-2), var(--ig-3), var(--ig-4));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+/* Cards with Instagram-style elevation */
+.ig-card {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.ig-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+/* Instagram-style buttons */
+.ig-btn {
+    background: linear-gradient(135deg, var(--ig-1), var(--ig-2));
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.ig-btn:hover {
+    background: linear-gradient(135deg, var(--ig-2), var(--ig-3));
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.ig-btn:active {
+    transform: translateY(0);
+}
+
+/* Instagram-style input fields */
+.ig-input {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text);
+    transition: var(--transition);
+}
+
+.ig-input:focus {
+    outline: none;
+    border-color: var(--ig-4);
+    box-shadow: 0 0 0 3px rgba(101, 123, 224, 0.1);
+}
+
+.ig-input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Navigation - Instagram-style */
+.ig-nav {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.ig-nav-link {
+    color: var(--text);
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.ig-nav-link:hover {
+    background: var(--surface-hover);
+    color: var(--ig-4);
+}
+
+.ig-nav-link.active {
+    background: linear-gradient(135deg, var(--ig-1), var(--ig-2));
+    color: white;
+}
+
+/* Gradient overlay effects */
+.ig-gradient-overlay {
+    background: linear-gradient(135deg, rgba(247, 164, 95, 0.1), rgba(101, 123, 224, 0.1));
+    border-radius: 12px;
+}
+
+/* Soft shadows with Instagram color hints */
+.ig-shadow {
+    box-shadow: 0 10px 30px -10px rgba(247, 164, 95, 0.2),
+                0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Badge styles */
+.ig-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.ig-badge-primary {
+    background: linear-gradient(135deg, var(--ig-1), var(--ig-2));
+    color: white;
+}
+
+.ig-badge-secondary {
+    background: linear-gradient(135deg, var(--ig-3), var(--ig-4));
+    color: white;
+}
+
+/* Instagram-style hover effects */
+.ig-hover-lift {
+    transition: var(--transition);
+}
+
+.ig-hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Smooth transitions for everything */
+* {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Form elements with Instagram styling */
+select, textarea {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text);
+    transition: var(--transition);
+}
+
+select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--ig-4);
+    box-shadow: 0 0 0 3px rgba(101, 123, 224, 0.1);
+}
+
+/* Modal styles */
+.ig-modal {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.ig-modal-content {
+    background: var(--surface);
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Instagram-style divider */
+.ig-divider {
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--border) 50%, 
+        transparent 100%);
+}
+
+/* Text colors with Instagram theme */
+.text-muted-ig {
+    color: var(--text-muted);
+}
+
+.text-light-ig {
+    color: var(--text-light);
+}
+
+/* Instagram-style loading spinner */
+.ig-spinner {
+    border: 3px solid rgba(247, 164, 95, 0.2);
+    border-top-color: var(--ig-1);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
