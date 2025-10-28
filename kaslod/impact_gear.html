@@ -68,13 +68,14 @@
         .admin-btn {
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
-            padding: 12px 24px;
+            padding: 12px 20px;
             border-radius: 12px;
             font-weight: 600;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             font-size: 14px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
         }
         
         .admin-btn:hover {
@@ -237,119 +238,122 @@
                 <button onclick="filterGear('all')" class="gear-filter-btn active px-6 py-2 rounded-md bg-orange-500 text-white font-medium transition">
                     All Gear
                 </button>
-                <button onclick="filterGear('boards')" class="gear-filter-btn px-6 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium transition">
-                    Boards
+                <button onclick="filterGear('decks')" class="gear-filter-btn px-6 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium transition">
+                    Decks
                 </button>
                 <button onclick="filterGear('wheels')" class="gear-filter-btn px-6 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium transition">
                     Wheels
                 </button>
-                <button onclick="filterGear('safety')" class="gear-filter-btn px-6 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium transition">
-                    Safety
+                <button onclick="filterGear('trucks')" class="gear-filter-btn px-6 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium transition">
+                    Trucks
                 </button>
-                <button onclick="filterGear('accessories')" class="gear-filter-btn px-6 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium transition">
-                    Accessories
+                <button onclick="filterGear('safety gears')" class="gear-filter-btn px-6 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium transition">
+                    Safety Gears
+                </button>
+                <button onclick="filterGear('accessories and modifications')" class="gear-filter-btn px-6 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium transition">
+                    Accessories and Modifications
                 </button>
             </div>
 
             <!-- Gear Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="gearGrid">
-                <!-- Gear Item 1 -->
-                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="boards">
+                <!-- Gear Item 1 - LandYachtz Evo 36 -->
+                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="decks">
                     <div class="relative h-64 bg-gray-700 flex items-center justify-center">
                         <i data-feather="box" class="w-20 h-20 text-orange-400"></i>
                     </div>
                     <div class="p-6">
-                        <span class="text-xs text-orange-400 font-semibold">BOARDS</span>
-                        <h3 class="text-xl font-bold mt-2 mb-2">Speedster Pro Deck</h3>
-                        <p class="text-gray-400 text-sm mb-4">Professional downhill deck with carbon fiber reinforcement</p>
+                        <span class="text-xs text-orange-400 font-semibold">DECKS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">LandYachtz Evo 36</h3>
+                        <p class="text-gray-400 text-sm mb-4">Classic downhill board design with lowered platform and directional wedging</p>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-2xl font-bold text-orange-400">$349</span>
+                            <span class="text-2xl font-bold text-orange-400">$299</span>
                             <div class="flex items-center">
                                 <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
                                 <span class="ml-1 text-sm">4.8</span>
                             </div>
                         </div>
-                        <button onclick="viewGearDetails('Speedster Pro Deck')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                        <button onclick="viewGearDetails('LandYachtz Evo 36')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
                             View Details
                         </button>
                     </div>
                 </div>
 
-                <!-- Gear Item 2 -->
-                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="wheels">
+                <!-- Gear Item 2 - Rocket Excalibur -->
+                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="decks">
                     <div class="relative h-64 bg-gray-700 flex items-center justify-center">
-                        <i data-feather="disc" class="w-20 h-20 text-pink-400"></i>
+                        <i data-feather="box" class="w-20 h-20 text-orange-400"></i>
                     </div>
                     <div class="p-6">
-                        <span class="text-xs text-pink-400 font-semibold">WHEELS</span>
-                        <h3 class="text-xl font-bold mt-2 mb-2">Grip Master 70mm</h3>
-                        <p class="text-gray-400 text-sm mb-4">High-grip urethane wheels for ultimate control</p>
+                        <span class="text-xs text-orange-400 font-semibold">DECKS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">Rocket Excalibur</h3>
+                        <p class="text-gray-400 text-sm mb-4">Harry Clarke Pro model with revolutionary front foot innovation</p>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-2xl font-bold text-pink-400">$89</span>
+                            <span class="text-2xl font-bold text-orange-400">$349</span>
                             <div class="flex items-center">
                                 <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
                                 <span class="ml-1 text-sm">4.9</span>
                             </div>
                         </div>
-                        <button onclick="viewGearDetails('Grip Master 70mm')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                        <button onclick="viewGearDetails('Rocket Excalibur')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
                             View Details
                         </button>
                     </div>
                 </div>
 
-                <!-- Gear Item 3 -->
-                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="safety">
+                <!-- Gear Item 3 - Rocket Simplex -->
+                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="decks">
                     <div class="relative h-64 bg-gray-700 flex items-center justify-center">
-                        <i data-feather="shield" class="w-20 h-20 text-green-400"></i>
+                        <i data-feather="box" class="w-20 h-20 text-orange-400"></i>
                     </div>
                     <div class="p-6">
-                        <span class="text-xs text-green-400 font-semibold">SAFETY</span>
-                        <h3 class="text-xl font-bold mt-2 mb-2">Impact Pro Helmet</h3>
-                        <p class="text-gray-400 text-sm mb-4">Full-face helmet with advanced impact protection</p>
+                        <span class="text-xs text-orange-400 font-semibold">DECKS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">Rocket Simplex</h3>
+                        <p class="text-gray-400 text-sm mb-4">LAF construction - water and bomb proof, only 2.65 lbs light</p>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-2xl font-bold text-green-400">$249</span>
-                            <div class="flex items-center">
-                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
-                                <span class="ml-1 text-sm">5.0</span>
-                            </div>
-                        </div>
-                        <button onclick="viewGearDetails('Impact Pro Helmet')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
-                            View Details
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Gear Item 4 -->
-                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="safety">
-                    <div class="relative h-64 bg-gray-700 flex items-center justify-center">
-                        <i data-feather="user-check" class="w-20 h-20 text-blue-400"></i>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs text-blue-400 font-semibold">SAFETY</span>
-                        <h3 class="text-xl font-bold mt-2 mb-2">Slide Gloves Elite</h3>
-                        <p class="text-gray-400 text-sm mb-4">Premium leather gloves with replaceable pucks</p>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-2xl font-bold text-blue-400">$79</span>
+                            <span class="text-2xl font-bold text-orange-400">$279</span>
                             <div class="flex items-center">
                                 <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
                                 <span class="ml-1 text-sm">4.7</span>
                             </div>
                         </div>
-                        <button onclick="viewGearDetails('Slide Gloves Elite')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                        <button onclick="viewGearDetails('Rocket Simplex')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
                             View Details
                         </button>
                     </div>
                 </div>
 
-                <!-- Gear Item 5 -->
-                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="boards">
+                <!-- Gear Item 4 - Rocket Rhino -->
+                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="decks">
                     <div class="relative h-64 bg-gray-700 flex items-center justify-center">
                         <i data-feather="box" class="w-20 h-20 text-orange-400"></i>
                     </div>
                     <div class="p-6">
-                        <span class="text-xs text-orange-400 font-semibold">BOARDS</span>
-                        <h3 class="text-xl font-bold mt-2 mb-2">Alpine Bomber DH</h3>
-                        <p class="text-gray-400 text-sm mb-4">Stiff drop-through deck for high-speed stability</p>
+                        <span class="text-xs text-orange-400 font-semibold">DECKS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">Rocket Rhino</h3>
+                        <p class="text-gray-400 text-sm mb-4">Ultra modern freeride and downhill board with racetail innovation</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-orange-400">$329</span>
+                            <div class="flex items-center">
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 text-sm">4.8</span>
+                            </div>
+                        </div>
+                        <button onclick="viewGearDetails('Rocket Rhino')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gear Item 5 - Rocket Don -->
+                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="decks">
+                    <div class="relative h-64 bg-gray-700 flex items-center justify-center">
+                        <i data-feather="box" class="w-20 h-20 text-orange-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-orange-400 font-semibold">DECKS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">Rocket Don</h3>
+                        <p class="text-gray-400 text-sm mb-4">Ultra modern freeride and downhill board - short, narrow with short wheelbase</p>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-2xl font-bold text-orange-400">$299</span>
                             <div class="flex items-center">
@@ -357,21 +361,43 @@
                                 <span class="ml-1 text-sm">4.6</span>
                             </div>
                         </div>
-                        <button onclick="viewGearDetails('Alpine Bomber DH')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                        <button onclick="viewGearDetails('Rocket Don')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
                             View Details
                         </button>
                     </div>
                 </div>
 
-                <!-- Gear Item 6 -->
+                <!-- Gear Item 6 - Venom Mach 1 Magnum Wheels -->
                 <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="wheels">
                     <div class="relative h-64 bg-gray-700 flex items-center justify-center">
                         <i data-feather="disc" class="w-20 h-20 text-pink-400"></i>
                     </div>
                     <div class="p-6">
                         <span class="text-xs text-pink-400 font-semibold">WHEELS</span>
-                        <h3 class="text-xl font-bold mt-2 mb-2">Speed Demon 75mm</h3>
-                        <p class="text-gray-400 text-sm mb-4">Large contact patch for maximum speed</p>
+                        <h3 class="text-xl font-bold mt-2 mb-2">Venom Mach 1 Magnum</h3>
+                        <p class="text-gray-400 text-sm mb-4">Little faster, little grippier, crazy durable - Gallo 24 Formula</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-pink-400">$89</span>
+                            <div class="flex items-center">
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 text-sm">4.9</span>
+                            </div>
+                        </div>
+                        <button onclick="viewGearDetails('Venom Mach 1 Magnum')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gear Item 7 - Seismic 78.5mm Delta Wheels -->
+                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="wheels">
+                    <div class="relative h-64 bg-gray-700 flex items-center justify-center">
+                        <i data-feather="disc" class="w-20 h-20 text-pink-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-pink-400 font-semibold">WHEELS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">Seismic 78.5mm Delta</h3>
+                        <p class="text-gray-400 text-sm mb-4">Next-level traction with world's most progressive hub-and-wheel engineering</p>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-2xl font-bold text-pink-400">$95</span>
                             <div class="flex items-center">
@@ -379,51 +405,205 @@
                                 <span class="ml-1 text-sm">4.8</span>
                             </div>
                         </div>
-                        <button onclick="viewGearDetails('Speed Demon 75mm')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                        <button onclick="viewGearDetails('Seismic 78.5mm Delta')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
                             View Details
                         </button>
                     </div>
                 </div>
 
-                <!-- Gear Item 7 -->
-                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="accessories">
+                <!-- Gear Item 8 - TSG PASS PRO Helmet -->
+                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="safety gears">
+                    <div class="relative h-64 bg-gray-700 flex items-center justify-center">
+                        <i data-feather="shield" class="w-20 h-20 text-green-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-green-400 font-semibold">SAFETY GEARS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">TSG PASS PRO Helmet</h3>
+                        <p class="text-gray-400 text-sm mb-4">Full-face helmet with advanced impact protection and anti-fog visor</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-400">$249</span>
+                            <div class="flex items-center">
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 text-sm">5.0</span>
+                            </div>
+                        </div>
+                        <button onclick="viewGearDetails('TSG PASS PRO Helmet')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gear Item 9 - Seismic Leather Race Gloves -->
+                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="safety gears">
+                    <div class="relative h-64 bg-gray-700 flex items-center justify-center">
+                        <i data-feather="user-check" class="w-20 h-20 text-green-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-green-400 font-semibold">SAFETY GEARS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">Seismic Leather Race Gloves</h3>
+                        <p class="text-gray-400 text-sm mb-4">Premium goatskin gloves with Kevlar reinforcement for maximum protection</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-400">$79</span>
+                            <div class="flex items-center">
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 text-sm">4.7</span>
+                            </div>
+                        </div>
+                        <button onclick="viewGearDetails('Seismic Leather Race Gloves')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gear Item 10 - Caliber Cupped Washers -->
+                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="accessories and modifications">
                     <div class="relative h-64 bg-gray-700 flex items-center justify-center">
                         <i data-feather="tool" class="w-20 h-20 text-purple-400"></i>
                     </div>
                     <div class="p-6">
-                        <span class="text-xs text-purple-400 font-semibold">ACCESSORIES</span>
-                        <h3 class="text-xl font-bold mt-2 mb-2">Precision Bearings Set</h3>
-                        <p class="text-gray-400 text-sm mb-4">ABEC-9 rated for maximum speed and smoothness</p>
+                        <span class="text-xs text-purple-400 font-semibold">ACCESSORIES & MODIFICATIONS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">Caliber Cupped Washers</h3>
+                        <p class="text-gray-400 text-sm mb-4">For barrel bushings - compatible with Paris, Bear, Ronin, Rogue, Arsenal, Randal</p>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-2xl font-bold text-purple-400">$45</span>
+                            <span class="text-2xl font-bold text-purple-400">$25</span>
+                            <div class="flex items-center">
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 text-sm">4.8</span>
+                            </div>
+                        </div>
+                        <button onclick="viewGearDetails('Caliber Cupped Washers')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gear Item 11 - Array Precision Cupped Washers -->
+                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="accessories and modifications">
+                    <div class="relative h-64 bg-gray-700 flex items-center justify-center">
+                        <i data-feather="tool" class="w-20 h-20 text-purple-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-purple-400 font-semibold">ACCESSORIES & MODIFICATIONS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">Array Precision Cupped Washers</h3>
+                        <p class="text-gray-400 text-sm mb-4">303 machined stainless steel washers for precision truck feel</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-purple-400">$35</span>
                             <div class="flex items-center">
                                 <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
                                 <span class="ml-1 text-sm">4.9</span>
                             </div>
                         </div>
-                        <button onclick="viewGearDetails('Precision Bearings Set')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                        <button onclick="viewGearDetails('Array Precision Cupped Washers')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
                             View Details
                         </button>
                     </div>
                 </div>
 
-                <!-- Gear Item 8 -->
-                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="accessories">
+                <!-- Gear Item 12 - Zealous Downhill Slalom Trucks -->
+                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="trucks">
                     <div class="relative h-64 bg-gray-700 flex items-center justify-center">
-                        <i data-feather="watch" class="w-20 h-20 text-cyan-400"></i>
+                        <i data-feather="tool" class="w-20 h-20 text-blue-400"></i>
                     </div>
                     <div class="p-6">
-                        <span class="text-xs text-cyan-400 font-semibold">ACCESSORIES</span>
-                        <h3 class="text-xl font-bold mt-2 mb-2">GPS Speed Tracker</h3>
-                        <p class="text-gray-400 text-sm mb-4">Track your speed, distance, and performance data</p>
+                        <span class="text-xs text-blue-400 font-semibold">TRUCKS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">Zealous Downhill Slalom Trucks</h3>
+                        <p class="text-gray-400 text-sm mb-4">High rake front and rear hangers with 111mm-124mm spaceable axles</p>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-2xl font-bold text-cyan-400">$129</span>
+                            <span class="text-2xl font-bold text-blue-400">$189</span>
+                            <div class="flex items-center">
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 text-sm">4.8</span>
+                            </div>
+                        </div>
+                        <button onclick="viewGearDetails('Zealous Downhill Slalom Trucks')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gear Item 13 - Valkyrie MK 3.5 Trucks -->
+                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="trucks">
+                    <div class="relative h-64 bg-gray-700 flex items-center justify-center">
+                        <i data-feather="tool" class="w-20 h-20 text-blue-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-blue-400 font-semibold">TRUCKS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">Valkyrie MK 3.5 Trucks</h3>
+                        <p class="text-gray-400 text-sm mb-4">More responsive, more grip - completely redesigned front truck</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-blue-400">$299</span>
+                            <div class="flex items-center">
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 text-sm">4.9</span>
+                            </div>
+                        </div>
+                        <button onclick="viewGearDetails('Valkyrie MK 3.5 Trucks')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gear Item 14 - Rocket Gravity Plate -->
+                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="accessories and modifications">
+                    <div class="relative h-64 bg-gray-700 flex items-center justify-center">
+                        <i data-feather="tool" class="w-20 h-20 text-purple-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-purple-400 font-semibold">ACCESSORIES & MODIFICATIONS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">Rocket Gravity Plate</h3>
+                        <p class="text-gray-400 text-sm mb-4">3lbs weight plate for fast stand-up slides with small race boards</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-purple-400">$89</span>
+                            <div class="flex items-center">
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 text-sm">4.7</span>
+                            </div>
+                        </div>
+                        <button onclick="viewGearDetails('Rocket Gravity Plate')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gear Item 15 - Dark Matter Griptape -->
+                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="accessories and modifications">
+                    <div class="relative h-64 bg-gray-700 flex items-center justify-center">
+                        <i data-feather="tool" class="w-20 h-20 text-purple-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-purple-400 font-semibold">ACCESSORIES & MODIFICATIONS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">Dark Matter Griptape</h3>
+                        <p class="text-gray-400 text-sm mb-4">Revolutionary durable - extremely strong grip with fabric backing</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-purple-400">$45</span>
+                            <div class="flex items-center">
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 text-sm">4.8</span>
+                            </div>
+                        </div>
+                        <button onclick="viewGearDetails('Dark Matter Griptape')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gear Item 16 - Cuei Bushings -->
+                <div class="gear-card bg-gray-800 rounded-xl overflow-hidden" data-category="accessories and modifications">
+                    <div class="relative h-64 bg-gray-700 flex items-center justify-center">
+                        <i data-feather="tool" class="w-20 h-20 text-purple-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-purple-400 font-semibold">ACCESSORIES & MODIFICATIONS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-2">Cuei Bushings</h3>
+                        <p class="text-gray-400 text-sm mb-4">Hydro Tech and Race Tech formula bushings in various durometers</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-purple-400">$15</span>
                             <div class="flex items-center">
                                 <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
                                 <span class="ml-1 text-sm">4.6</span>
                             </div>
                         </div>
-                        <button onclick="viewGearDetails('GPS Speed Tracker')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
+                        <button onclick="viewGearDetails('Cuei Bushings')" class="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-md font-medium transition">
                             View Details
                         </button>
                     </div>
@@ -444,6 +624,7 @@
             <div class="bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
                 <!-- Gear Header -->
                 <div id="gear-header" class="relative h-80 bg-gradient-to-br from-orange-500/20 to-pink-500/20">
+                    <img id="gear-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-8">
                         <span id="gear-category-badge" class="bg-orange-500 text-xs px-3 py-1 rounded-full font-bold inline-block mb-4">BOARDS</span>
@@ -732,12 +913,12 @@
             if (loginBtn) {
                 loginBtn.textContent = 'Admin Dashboard';
                 loginBtn.href = 'admin_dashboard.html';
-                loginBtn.className = 'bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded-md font-medium transition transform hover:scale-105';
+                loginBtn.className = 'admin-btn';
                 
                 // Add logout button
                 const logoutBtn = document.createElement('button');
                 logoutBtn.textContent = 'Logout';
-                logoutBtn.className = 'bg-red-500 hover:bg-red-600 px-4 py-2 rounded-md font-medium transition';
+                logoutBtn.className = 'logout-btn';
                 logoutBtn.onclick = logout;
                 
                 loginBtn.parentNode.insertBefore(logoutBtn, loginBtn.nextSibling);
@@ -754,221 +935,437 @@
         // COMPREHENSIVE GEAR DATA STRUCTURE
         // ========================================
         const gearData = {
-            'Speedster Pro Deck': {
-                id: 'speedster-pro-deck',
-                category: 'BOARDS',
+            'LandYachtz Evo 36': {
+                id: 'landyachtz-evo-36',
+                category: 'DECKS',
                 categoryColor: 'orange',
-                title: 'Speedster Pro Deck',
-                price: 349,
+                title: 'LandYachtz Evo 36',
+                price: 299,
                 rating: '4.8',
-                description: 'The Speedster Pro Deck is engineered for professional downhill skateboarding with carbon fiber reinforcement and precision-cut concave. This deck offers unmatched stability at high speeds while maintaining responsive control for technical maneuvers.',
+                description: 'The Evo is a classic example of downhill board design and the concept continues to be effective to this day. A lowered platform and directional wedging work to give you a super stable ride and front-loaded steering that gives you a ton of control while cornering hard.',
                 specifications: [
-                    'Length: 42 inches',
-                    'Width: 10 inches',
-                    'Wheelbase: 30 inches',
-                    'Material: 7-ply maple with carbon fiber',
+                    'Length: 36 inches',
+                    'Width: 9.5 inches',
+                    'Material: 9 plies of Canadian Maple',
                     'Weight: 2.8 lbs',
-                    'Concave: Progressive 0.75"'
+                    'Drop: Lowered platform design',
+                    'Wheelbase: Adjustable'
                 ],
                 features: [
-                    'Carbon fiber reinforcement for maximum stiffness',
-                    'Progressive concave for optimal foot placement',
+                    'Lowered platform for stability',
+                    'Directional wedging for control',
+                    'Front-loaded steering',
+                    'Super stable ride',
                     'Precision-cut wheel wells',
-                    'Professional-grade grip tape included',
-                    'Compatible with all downhill trucks',
-                    '2-year manufacturer warranty'
+                    'Professional-grade construction'
                 ],
-                image: 'http://static.photos/sport/1024x576/23',
+                image: 'images/landyachts evo deck.jpg',
                 stock: 15
             },
-            'Grip Master 70mm': {
-                id: 'grip-master-70mm',
-                category: 'WHEELS',
-                categoryColor: 'pink',
-                title: 'Grip Master 70mm',
-                price: 89,
+            'Rocket Excalibur': {
+                id: 'rocket-excalibur',
+                category: 'DECKS',
+                categoryColor: 'orange',
+                title: 'Rocket Excalibur',
+                price: 349,
                 rating: '4.9',
-                description: 'High-performance urethane wheels designed for maximum grip and control. The Grip Master series features our proprietary compound that provides exceptional traction on various surfaces while maintaining durability.',
+                description: 'The Ghost comes as the second pro model of Madrid team rider and world champion Harry Clarke. Developed with podiums in mind the Ghost features all the aspects of the modern slalom style race board.',
                 specifications: [
-                    'Diameter: 70mm',
-                    'Contact patch: 50mm',
-                    'Durometer: 78a',
-                    'Core: Precision-machined aluminum',
-                    'Weight: 85g per wheel',
-                    'Color: Black with orange core'
+                    'Length: 30 inches',
+                    'Width: 8.2" front, 8.5" back',
+                    'Wheelbase: 19"-20.5"',
+                    'Material: SFI-certified Canadian maple, Carbon fiber, Glass fiber',
+                    'Weight: 2.2 lbs',
+                    'Concave: Elliptical, 0.24-0.39"'
                 ],
                 features: [
-                    'Proprietary high-grip urethane compound',
-                    'Precision-machined aluminum core',
-                    'Optimized contact patch for maximum grip',
-                    'Heat-resistant formula',
-                    'Compatible with all standard bearings',
+                    'Revolutionary front foot innovation',
+                    'Mellow elliptical concave',
+                    'Light and wide W at the back',
+                    'Asymmetrical design options',
+                    'Weight mounting options included',
                     'Professional racing tested'
                 ],
-                image: 'http://static.photos/sport/1024x576/24',
-                stock: 25
-            },
-            'Impact Pro Helmet': {
-                id: 'impact-pro-helmet',
-                category: 'SAFETY',
-                categoryColor: 'green',
-                title: 'Impact Pro Helmet',
-                price: 249,
-                rating: '5.0',
-                description: 'Full-face helmet with advanced impact protection technology. The Impact Pro features multi-density EPS foam, carbon fiber shell, and integrated ventilation system for maximum protection and comfort during long rides.',
-                specifications: [
-                    'Shell: Carbon fiber composite',
-                    'Liner: Multi-density EPS foam',
-                    'Weight: 2.2 lbs',
-                    'Certification: DOT, ECE, Snell M2020',
-                    'Ventilation: 15 intake vents',
-                    'Visor: Anti-fog, UV protection'
-                ],
-                features: [
-                    'Advanced impact absorption system',
-                    'Carbon fiber shell for lightweight protection',
-                    'Integrated ventilation system',
-                    'Removable and washable liner',
-                    'Anti-fog visor with UV protection',
-                    'Adjustable chin strap with quick-release'
-                ],
-                image: 'http://static.photos/sport/1024x576/25',
+                image: 'images/rocket excalibur deck.jpg',
                 stock: 12
             },
-            'Slide Gloves Elite': {
-                id: 'slide-gloves-elite',
-                category: 'SAFETY',
-                categoryColor: 'blue',
-                title: 'Slide Gloves Elite',
-                price: 79,
-                rating: '4.7',
-                description: 'Premium leather slide gloves with replaceable pucks. The Elite series offers superior protection and control with ergonomic design and high-quality materials for professional downhill skateboarding.',
-                specifications: [
-                    'Material: Premium cowhide leather',
-                    'Pucks: Replaceable HDPE plastic',
-                    'Padding: EVA foam protection',
-                    'Closure: Velcro wrist strap',
-                    'Sizes: S, M, L, XL',
-                    'Weight: 8oz per pair'
-                ],
-                features: [
-                    'Premium cowhide leather construction',
-                    'Replaceable slide pucks',
-                    'EVA foam padding for impact protection',
-                    'Ergonomic finger design',
-                    'Reinforced palm area',
-                    'Machine washable'
-                ],
-                image: 'http://static.photos/sport/1024x576/26',
-                stock: 20
-            },
-            'Alpine Bomber DH': {
-                id: 'alpine-bomber-dh',
-                category: 'BOARDS',
+            'Rocket Simplex': {
+                id: 'rocket-simplex',
+                category: 'DECKS',
                 categoryColor: 'orange',
-                title: 'Alpine Bomber DH',
-                price: 299,
-                rating: '4.6',
-                description: 'Stiff drop-through deck designed for high-speed stability and control. The Alpine Bomber features a low center of gravity and optimized wheelbase for maximum stability at extreme speeds.',
+                title: 'Rocket Simplex',
+                price: 279,
+                rating: '4.7',
+                description: 'A board so simple but yet so complex. LAF (light as f**k) construction is back: water and bomb proof and only 2.65 lbs / 1.2 kg light. With a very simple but effective concave that leaves all options open to the rider.',
                 specifications: [
-                    'Length: 40 inches',
-                    'Width: 9.5 inches',
-                    'Wheelbase: 28 inches',
-                    'Material: 8-ply maple',
-                    'Weight: 3.2 lbs',
-                    'Drop: 0.5 inches'
+                    'Length: 30.7 inches',
+                    'Width: 8.8" middle',
+                    'Wheelbase: 19"-21.5"',
+                    'Material: SFI-certified Canadian maple, Carbon fiber, Glass fiber',
+                    'Weight: 2.65 lbs / 1.2 kg',
+                    'Concave: Elliptical, 0.39"'
                 ],
                 features: [
-                    'Drop-through truck mounting',
-                    'Low center of gravity design',
-                    'Optimized wheelbase for stability',
-                    'Reinforced truck mounting areas',
-                    'Professional-grade grip tape',
-                    'Compatible with all wheel sizes'
+                    'LAF construction - water and bomb proof',
+                    'Extremely lightweight design',
+                    'Waterproof and impact-resistant',
+                    'Full urethane edges and inserts',
+                    'Mellow elliptical concave',
+                    'Professional-grade materials'
                 ],
-                image: 'http://static.photos/sport/1024x576/27',
+                image: 'images/rocket simplex deck.jpg',
                 stock: 18
             },
-            'Speed Demon 75mm': {
-                id: 'speed-demon-75mm',
-                category: 'WHEELS',
-                categoryColor: 'pink',
-                title: 'Speed Demon 75mm',
-                price: 95,
+            'Rocket Rhino': {
+                id: 'rocket-rhino',
+                category: 'DECKS',
+                categoryColor: 'orange',
+                title: 'Rocket Rhino',
+                price: 329,
                 rating: '4.8',
-                description: 'Large contact patch wheels designed for maximum speed and smoothness. The Speed Demon series features our fastest compound with optimized core design for professional racing applications.',
+                description: 'The Don is the ultra modern freeride and downhill board of the future. Short, narrow and with a very short wheelbase. It was developed with Benson Marquart, who has shaped modern freeriding in recent years with his unique style.',
                 specifications: [
-                    'Diameter: 75mm',
-                    'Contact patch: 55mm',
-                    'Durometer: 80a',
-                    'Core: Precision-machined aluminum',
-                    'Weight: 95g per wheel',
-                    'Color: White with blue core'
+                    'Length: 30 inches',
+                    'Width: 8.5 inches',
+                    'Wheelbase: 18.8"-21.6"',
+                    'Material: SFI-certified Canadian maple, Carbon fiber, Glass fiber',
+                    'Weight: 2.5 lbs',
+                    'Concave: Elliptical, 0.4"'
                 ],
                 features: [
-                    'High-speed urethane compound',
-                    'Large contact patch for stability',
-                    'Precision-machined aluminum core',
-                    'Optimized for maximum speed',
+                    'Racetail innovation design',
+                    'Perfect racing machine',
+                    'No foam, just direct board contact',
+                    'Plastic wedges no longer necessary',
+                    'Most direct connection between board and truck',
+                    'Fluid transition to racetail'
+                ],
+                image: 'images/rocket rhino race tail deck.jpg',
+                stock: 20
+            },
+            'Rocket Don': {
+                id: 'rocket-don',
+                category: 'DECKS',
+                categoryColor: 'orange',
+                title: 'Rocket Don',
+                price: 299,
+                rating: '4.6',
+                description: 'The Don is the ultra modern freeride and downhill board of the future. Short, narrow and with a very short wheelbase. It was developed with Benson Marquart, who has shaped modern freeriding in recent years with his unique style.',
+                specifications: [
+                    'Length: 29.5 inches',
+                    'Width: 8.2" front, 8.4" back',
+                    'Wheelbase: 16"-20"',
+                    'Material: SFI-certified Canadian maple, Carbon fiber, Glass fiber',
+                    'Weight: 2.3 lbs',
+                    'Concave: 0.25"-0.4"'
+                ],
+                features: [
+                    'Ultra modern freeride design',
+                    'Short, narrow with short wheelbase',
+                    'Mellow elliptical concave',
+                    'Heavily front loaded rocker',
+                    'Angled flushcut at front (3°)',
+                    'Weight mounting options included'
+                ],
+                image: 'images/rocket don deck.jpg',
+                stock: 16
+            },
+            'Venom Mach 1 Magnum': {
+                id: 'venom-mach-1-magnum',
+                category: 'WHEELS',
+                categoryColor: 'pink',
+                title: 'Venom Mach 1 Magnum',
+                price: 89,
+                rating: '4.9',
+                description: 'Little faster, little grippier, crazy durable. The new standard for race wheel urethane with Gallo 24 Formula. Revolutionary grip to hold even the most extreme lines at top velocity.',
+                specifications: [
+                    'Diameter: 78mm',
+                    'Contact patch: 55mm',
+                    'Durometer: 78a',
+                    'Formula: Gallo 24 Formula',
+                    'Weight: 95g per wheel',
+                    'Color: White with red graphics'
+                ],
+                features: [
+                    'Gallo 24 Formula urethane',
+                    'Little faster performance',
+                    'Little grippier traction',
+                    'Crazy durable construction',
                     'Professional racing tested',
                     'Compatible with all bearings'
                 ],
-                image: 'http://static.photos/sport/1024x576/28',
+                image: 'images/venom magnum mach 1 red leaf.jpg',
+                stock: 25
+            },
+            'Seismic 78.5mm Delta': {
+                id: 'seismic-78-5mm-delta',
+                category: 'WHEELS',
+                categoryColor: 'pink',
+                title: 'Seismic 78.5mm Delta',
+                price: 95,
+                rating: '4.8',
+                description: 'Next-level traction and world\'s most progressive hub-and-wheel engineering! Revolutionary grip to hold even the most extreme lines at top velocity. Size, speed, and momentum to beat the pack on straightaways.',
+                specifications: [
+                    'Diameter: 78.5mm',
+                    'Width: 68mm',
+                    'Hub: 46mm x 44mm FUSION hub',
+                    'Urethane: G-LOC urethane',
+                    'Weight: 9.25 oz each',
+                    'Durometer: 73.5A, 75.5A available'
+                ],
+                features: [
+                    'G-LOC urethane compound',
+                    'FUSION hub technology',
+                    '6.5% bearing seat offset',
+                    '67.5mm running surface',
+                    'Square outside edge, straight-cut inside',
+                    'World\'s most progressive engineering'
+                ],
+                image: 'images/seismic delta wheels.jpg',
                 stock: 22
             },
-            'Precision Bearings Set': {
-                id: 'precision-bearings-set',
-                category: 'ACCESSORIES',
-                categoryColor: 'purple',
-                title: 'Precision Bearings Set',
-                price: 45,
-                rating: '4.9',
-                description: 'ABEC-9 rated precision bearings for maximum speed and smoothness. Each set includes 8 bearings with precision-machined races and high-quality steel balls for professional performance.',
+            'TSG PASS PRO Helmet': {
+                id: 'tsg-pass-pro-helmet',
+                category: 'SAFETY GEARS',
+                categoryColor: 'green',
+                title: 'TSG PASS PRO Helmet',
+                price: 249,
+                rating: '5.0',
+                description: 'Full-face helmet with advanced impact protection and anti-fog visor. The TSG PASS PRO features premium construction with clean visor technology and manufacturer\'s instructions for optimal performance.',
                 specifications: [
-                    'Rating: ABEC-9',
-                    'Material: Chrome steel',
-                    'Quantity: 8 bearings',
-                    'Size: 608 (8mm bore)',
-                    'Weight: 12g per bearing',
-                    'Lubrication: High-speed grease'
+                    'Shell: Advanced composite',
+                    'Liner: Multi-density EPS foam',
+                    'Weight: 2.1 lbs',
+                    'Certification: DOT, ECE, Snell M2020',
+                    'Visor: Anti-fog, UV protection',
+                    'Sizes: S, M, L, XL'
                 ],
                 features: [
-                    'ABEC-9 precision rating',
-                    'Chrome steel construction',
-                    'High-speed grease lubrication',
-                    'Precision-machined races',
-                    'Professional performance',
-                    'Long-lasting durability'
+                    'Advanced impact protection',
+                    'Anti-fog visor technology',
+                    'Clean visor before use',
+                    'Follow manufacturer\'s instructions',
+                    'Premium construction materials',
+                    'Professional racing approved'
                 ],
-                image: 'http://static.photos/sport/1024x576/29',
+                image: 'images/tsg pass pro helmet.jpg',
+                stock: 12
+            },
+            'Seismic Leather Race Gloves': {
+                id: 'seismic-leather-race-gloves',
+                category: 'SAFETY GEARS',
+                categoryColor: 'green',
+                title: 'Seismic Leather Race Gloves',
+                price: 79,
+                rating: '4.7',
+                description: 'We took the time to re-examine and optimize every feature for modern downhill skateboarding. Designed top-to-bottom for maximum function, fit, and durability with premium goatskin throughout.',
+                specifications: [
+                    'Material: Premium goatskin',
+                    'Reinforcement: Kevlar knuckle bar',
+                    'Padding: EVA foam protection',
+                    'Closure: Industrial-grade Velcro',
+                    'Sizes: S, M, L, XL',
+                    'Weight: 6oz per pair'
+                ],
+                features: [
+                    'Premium goatskin construction',
+                    'Kevlar knuckle bar protection',
+                    'Perforated for breathability',
+                    'Advanced skate-specific seam geometry',
+                    'Velcro split at natural palm crease',
+                    'Ergonomic glove patterns'
+                ],
+                image: 'images/seismic leather gloves.jpg',
+                stock: 20
+            },
+            'Caliber Cupped Washers': {
+                id: 'caliber-cupped-washers',
+                category: 'ACCESSORIES AND MODIFICATIONS',
+                categoryColor: 'purple',
+                title: 'Caliber Cupped Washers',
+                price: 25,
+                rating: '4.8',
+                description: 'For barrel bushings - compatible with Paris, Bear, Ronin, Rogue, Arsenal, Randal, etc. These precision-machined washers provide optimal bushing engagement and prevent movement during hard turns.',
+                specifications: [
+                    'Material: Precision-machined steel',
+                    'Compatibility: Barrel bushings',
+                    'Brands: Paris, Bear, Ronin, Rogue, Arsenal, Randal',
+                    'Finish: Black and silver available',
+                    'Quantity: 4 washers per set',
+                    'Weight: 5g per washer'
+                ],
+                features: [
+                    'Precision-machined construction',
+                    'Compatible with multiple truck brands',
+                    'Optimal bushing engagement',
+                    'Prevents movement during turns',
+                    'Durable steel construction',
+                    'Professional racing tested'
+                ],
+                image: 'images/caliber cupped washers.jpg',
                 stock: 50
             },
-            'GPS Speed Tracker': {
-                id: 'gps-speed-tracker',
-                category: 'ACCESSORIES',
-                categoryColor: 'cyan',
-                title: 'GPS Speed Tracker',
-                price: 129,
-                rating: '4.6',
-                description: 'Advanced GPS speed tracker with comprehensive performance monitoring. Track your speed, distance, route, and performance data with precision GPS technology and long-lasting battery life.',
+            'Array Precision Cupped Washers': {
+                id: 'array-precision-cupped-washers',
+                category: 'ACCESSORIES AND MODIFICATIONS',
+                categoryColor: 'purple',
+                title: 'Array Precision Cupped Washers',
+                price: 35,
+                rating: '4.9',
+                description: 'The Array precision cupped washers are 303 machined stainless steel washers that sit on the barrel bushings of your choice and stays right where it\'s meant to be while keeping the bushing engaged and running at its full, responsive potential.',
                 specifications: [
-                    'GPS: High-precision GPS',
-                    'Battery: 12-hour continuous use',
-                    'Display: OLED screen',
-                    'Water resistance: IPX7',
-                    'Weight: 45g',
-                    'Mounting: Universal bracket'
+                    'Material: 303 machined stainless steel',
+                    'Outer Diameter: 25.3mm',
+                    'Inner Diameter: 9.45mm',
+                    'Thickness: 1.7mm',
+                    'Quantity: 4 washers per set',
+                    'Weight: 8g per washer'
                 ],
                 features: [
-                    'High-precision GPS tracking',
-                    'Real-time speed display',
-                    'Route recording and playback',
-                    'Performance analytics',
-                    'Water-resistant design',
-                    'Long-lasting battery life'
+                    '303 machined stainless steel',
+                    'Precision fit against kingpin',
+                    'Prevents bushing movement',
+                    'Truck moves as one system',
+                    'Upgrade to precision feel',
+                    'Maximize precision truck potential'
                 ],
-                image: 'http://static.photos/sport/1024x576/30',
-                stock: 8
+                image: 'images/ARRAY precision cupped washers.jpg',
+                stock: 40
+            },
+            'Zealous Downhill Slalom Trucks': {
+                id: 'zealous-downhill-slalom-trucks',
+                category: 'TRUCKS',
+                categoryColor: 'blue',
+                title: 'Zealous Downhill Slalom Trucks',
+                price: 189,
+                rating: '4.8',
+                description: 'High rake front and rear hangers with 111mm-124mm spaceable 17-4 stainless steel axles. Features 51° front baseplate and 19° rear baseplate with fixed in place National Aerospace Standard kingpin.',
+                specifications: [
+                    'Hangers: High rake (7mm) front and rear',
+                    'Axles: 111mm-124mm spaceable 17-4 stainless steel',
+                    'Front Baseplate: 51°',
+                    'Rear Baseplate: 19°',
+                    'Kingpin: National Aerospace Standard',
+                    'Weight: 450g per truck'
+                ],
+                features: [
+                    'High rake hanger design',
+                    'Spaceable stainless steel axles',
+                    'Fixed kingpin for durability',
+                    'PTFE bonded pivots',
+                    '12 hole baseplate pattern',
+                    'Dual resistance bushing seat'
+                ],
+                image: 'images/zealous downhill slalom trucks.jpg',
+                stock: 15
+            },
+            'Valkyrie MK 3.5 Trucks': {
+                id: 'valkyrie-mk-3-5-trucks',
+                category: 'TRUCKS',
+                categoryColor: 'blue',
+                title: 'Valkyrie MK 3.5 Trucks',
+                price: 299,
+                rating: '4.9',
+                description: 'More responsive, more grip. The new MK3 slaloms feature a completely redesigned front truck that\'s packed with features. Dual-pivot design of the front truck fully prescribes the movement of the hanger.',
+                specifications: [
+                    'Hangers: 115-125mm',
+                    'Baseplates: 49/15 with riser',
+                    'Material: Aluminum 7075-T6 hangers',
+                    'Axles: Heat treated 17-4 stainless',
+                    'Weight: 500g per truck',
+                    'Bushings: Riptide 87A and 90A included'
+                ],
+                features: [
+                    'Dual-pivot front truck design',
+                    'Super strong aluminum 7075-T6',
+                    'Heat treated stainless axles',
+                    'Extensive cycle testing',
+                    'Open seat platform for wide bushings',
+                    'Milspec kingpin'
+                ],
+                image: 'images/Valkyrie MK 3.5 DH slaloms precision trucks.jpg',
+                stock: 10
+            },
+            'Rocket Gravity Plate': {
+                id: 'rocket-gravity-plate',
+                category: 'ACCESSORIES AND MODIFICATIONS',
+                categoryColor: 'purple',
+                title: 'Rocket Gravity Plate',
+                price: 89,
+                rating: '4.7',
+                description: 'The Gravity Plate weighs exactly 3lbs / 1.35 kg and is attached behind the front truck to make fast stand-up slides with small race boards easier. Complete set includes everything needed for installation.',
+                specifications: [
+                    'Weight: 3lbs / 1.35 kg',
+                    'Material: Steel with cork backing',
+                    'Riser: 20mm bamboo riser included',
+                    'Bolts: Stainless steel 1.25" and 2"',
+                    'Nuts: 2 nylock nuts included',
+                    'Templates: Positioning and drilling included'
+                ],
+                features: [
+                    'Complete installation kit',
+                    'Cork backing to avoid scratching',
+                    '20mm riser for lower center of gravity',
+                    'Stainless steel hardware',
+                    'Positioning template included',
+                    'Drilling template included'
+                ],
+                image: 'images/rocket gravity plates.jpg',
+                stock: 25
+            },
+            'Dark Matter Griptape': {
+                id: 'dark-matter-griptape',
+                category: 'ACCESSORIES AND MODIFICATIONS',
+                categoryColor: 'purple',
+                title: 'Dark Matter Griptape',
+                price: 45,
+                rating: '4.8',
+                description: 'Revolutionary durable - extremely strong grip with fabric backing. Dark matter uses fabric backing which makes it much more durable, also making the edges less likely to tear or flake.',
+                specifications: [
+                    'Material: Fabric backing',
+                    'Sheets: 3 sheets 32cm x 26cm',
+                    'Logo sheet: 1 sheet 10cm x 26cm with laser cut logo',
+                    'Features: Even coarser while keeping flexibility',
+                    'Water resistance: Yes',
+                    'Heat resistance: Yes'
+                ],
+                features: [
+                    'Fabric backing for durability',
+                    'Sharper grains that won\'t wear out',
+                    'Extremely strong grip even when wet',
+                    'Heat-resistant material',
+                    'Laser cut logo sheet included',
+                    'Stickers included'
+                ],
+                image: 'images/dark matter grip tape.jpg',
+                stock: 30
+            },
+            'Cuei Bushings': {
+                id: 'cuei-bushings',
+                category: 'ACCESSORIES AND MODIFICATIONS',
+                categoryColor: 'purple',
+                title: 'Cuei Bushings',
+                price: 15,
+                rating: '4.6',
+                description: 'Hydro Tech and Race Tech formula bushings in various durometers. High standard construction with multiple formulas for different riding styles and preferences.',
+                specifications: [
+                    'Formulas: Hydro Tech and Race Tech',
+                    'Durometers: Various available',
+                    'Colors: White, orange, yellow, purple, pink',
+                    'Types: Barrel and cone shapes',
+                    'Quantity: 4 bushings per set',
+                    'Weight: 12g per bushing'
+                ],
+                features: [
+                    'Hydro Tech formula available',
+                    'Race Tech formula available',
+                    'High standard construction',
+                    'Multiple durometer options',
+                    'Various colors available',
+                    'Professional racing tested'
+                ],
+                image: 'images/cuei hydrotech and racetech tall barell bushings.jpg',
+                stock: 100
             }
         };
 
@@ -1022,6 +1419,11 @@
             document.getElementById('gear-rating').textContent = gear.rating;
             document.getElementById('gear-price').textContent = `$${gear.price}`;
             document.getElementById('gear-description').textContent = gear.description;
+            const gearImageEl = document.getElementById('gear-image');
+            if (gearImageEl) {
+                gearImageEl.src = gear.image;
+                gearImageEl.alt = gear.title;
+            }
 
             // Specifications
             const specsContainer = document.getElementById('gear-specs');
@@ -1382,10 +1784,11 @@
 
         function getCategoryColor(category) {
             const colors = {
-                'boards': 'orange',
+                'decks': 'orange',
                 'wheels': 'pink',
-                'safety': 'green',
-                'accessories': 'purple'
+                'safety gears': 'green',
+                'accessories and modifications': 'purple',
+                'trucks': 'blue'
             };
             return colors[category.toLowerCase()] || 'orange';
         }
@@ -1405,9 +1808,11 @@
                 gearCard.className = `gear-card bg-gray-800 rounded-xl overflow-hidden`; 
                 gearCard.setAttribute('data-category', item.category.toLowerCase());
                 
+                const imageUrl = item.image || 'https://via.placeholder.com/800x600?text=Gear+Image';
+
                 gearCard.innerHTML = `
-                    <div class="relative h-64 bg-gray-700 flex items-center justify-center">
-                        <i data-feather="box" class="w-20 h-20 text-orange-400"></i>
+                    <div class="relative h-64 bg-gray-700">
+                        <img src="${imageUrl}" alt="${item.name}" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <span class="text-xs text-orange-400 font-semibold">${item.category.toUpperCase()}</span>
@@ -1432,6 +1837,22 @@
             feather.replace();
         }
 
+        // Replace icon thumbnails in existing static cards with images from gearData
+        function applyCardImages() {
+            const cards = document.querySelectorAll('#gearGrid .gear-card');
+            cards.forEach(card => {
+                const titleEl = card.querySelector('h3');
+                if (!titleEl) return;
+                const name = titleEl.textContent.trim();
+                const data = gearData[name];
+                const imageUrl = data && data.image ? data.image : 'https://via.placeholder.com/800x600?text=Gear+Image';
+
+                const thumb = card.querySelector('.relative.h-64');
+                if (!thumb) return;
+                thumb.innerHTML = `<img src="${imageUrl}" alt="${name}" class="w-full h-full object-cover">`;
+            });
+        }
+
         // Initialize everything on page load
         document.addEventListener('DOMContentLoaded', () => {
             checkLoginStatus();
@@ -1439,6 +1860,7 @@
             initVantaBackground();
             feather.replace();
             updateCartCount();
+            applyCardImages();
         });
 
         // Initialize Vanta.js background
